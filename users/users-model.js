@@ -5,6 +5,7 @@ module.exports = {
   findBy,
   findById,
   add,
+  getDepts,
 };
 
 function find(dept = null) {
@@ -38,4 +39,7 @@ async function add(newUser) {
   } catch (e) {
     throw e;
   }
+}
+function getDepts() {
+  return db("departments").orderBy("id");
 }

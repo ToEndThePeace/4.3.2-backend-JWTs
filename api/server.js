@@ -15,7 +15,9 @@ server.use(helmet());
 // Routers
 const authRouter = require("../auth/auth-router");
 const userRouter = require("../users/users-router");
+const dataRouter = require("../data/data-router");
 server.use("/api/users", restricted, userRouter);
+server.use("/api/data", dataRouter);
 server.use("/api", authRouter);
 
 // Test Endpoint
